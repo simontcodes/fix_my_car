@@ -1,0 +1,33 @@
+<%= form_for @client do |f| %>
+<p> <%= f.label :name %> <%= f.text_field :name %> </p>
+<p> <%= f.label :email %> <%= f.text_field :email %> </p>
+<p> <%= f.label :phone %> <%= f.text_field :phone %> </p>
+<p> <%= f.label :cedula %> <%= f.number_field :cedula %> </p>
+
+<%= f.fields_for :cars do |cars_fields| %>
+   <div class="field">
+     <%= cars_fields.label :Make %>
+     <%= cars_fields.text_field :make %>
+   </div>
+
+   <div class="field">
+     <%= cars_fields.label :model %>
+     <%= cars_fields.text_field :model %>
+   </div>
+   <div class="field">
+     <%= cars_fields.label :year %>
+     <%= cars_fields.date_field :year %>
+   </div>
+   <div class="field">
+     <%= cars_fields.label :color %>
+     <%= cars_fields.text_field :color %>
+   </div>
+   <div class="field">
+     <%= cars_fields.label :plate %>
+     <%= cars_fields.text_field :plate %>
+   </div>
+   <% end %>
+
+
+<p> <%= f.submit %>
+ <% end %>
