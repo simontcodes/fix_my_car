@@ -11,4 +11,4 @@
 
 
 #Car.create(make:"Ford", model: 'Focus', year: '01/01/2008', color: 'black', plate: 'A2E563G', client_id: 1)
-Car.create(make:"Audi", model: 'A4', year: '01/01/2005', color: 'silver', plate: 'B2E11W2', client_id: 1)
+#Car.create(make:"Audi", model: 'A4', year: '01/01/2005', color: 'silver', plate: 'B2E11W2', client_id: 1)

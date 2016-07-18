@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715235531) do
+ActiveRecord::Schema.define(version: 20160718191820) do
 
   create_table "cars", force: :cascade do |t|
     t.string   "make"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160715235531) do
     t.integer  "mechanic_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "aasm_state"
   end
 
   create_table "mechanics", force: :cascade do |t|
@@ -55,8 +56,10 @@ ActiveRecord::Schema.define(version: 20160715235531) do
   create_table "statuses", force: :cascade do |t|
     t.text     "message"
     t.integer  "job_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "stage"
+    t.string   "current_state"
   end
 
 end
