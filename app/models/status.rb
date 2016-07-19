@@ -2,7 +2,7 @@ class Status < ApplicationRecord
   belongs_to :job
 
   before_save :update_status_and_job
-
+ 
   def update_status_and_job
     self.current_state = self.job.aasm_state
     if self.job.received?

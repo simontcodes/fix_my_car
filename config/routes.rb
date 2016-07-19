@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-
-
+  root 'dashboards#index'
+  get '/dashboards' => 'dashboards#index'
+  resources :jobs
+  resources :mechanics
   resources :clients do
     resources :cars
   end
