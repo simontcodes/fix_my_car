@@ -11,6 +11,8 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @params = params
+
     #@clients = Client.all
     # @job.cars.build
     # @job.mechanics.build
@@ -19,6 +21,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @params = params
 
     if @job.save
       redirect_to dashboards_path, notice: "Client Created Successfully!"
@@ -31,7 +34,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.permit(mechanic_attributes: [:name], cars_attributes: [:model])
+    params.require(:job).permit(:car_id, :mechanic_id)
   end
 
 
