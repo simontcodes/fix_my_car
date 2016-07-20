@@ -1,1 +1,16 @@
 <h1>New Job</h1>
+
+<%= form_for @job do |f| %>
+
+<p> <%= f.label :car_id%> <%= collection_select :car, :car_id, Car.all, :id, :model%> </p>
+
+<p> <%= f.label :mechanic_id%> <%= collection_select :mechanic, :mechanic_id, Mechanic.all, :id, :name%> </p>
+
+<p> <%= f.submit %>
+ <% end %>
+
+<!-- 1. create a drop down field for the client name
+      2. create a form for the new job
+      3. submit the new job using the car_id selected by the client_id. Can i do this even though my job model does not have a direction relationship? It is a through relationship
+      4. auto update the car field based on the cars registered to that clients
+      5. add link/form to create new car for that client
