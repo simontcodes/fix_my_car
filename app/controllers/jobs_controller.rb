@@ -12,7 +12,6 @@ class JobsController < ApplicationController
   def new
     @job = Job.new
     @params = params
-    @cars = Car.all
 
     #@clients = Client.all
     # @job.cars.build

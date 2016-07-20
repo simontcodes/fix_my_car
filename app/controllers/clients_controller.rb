@@ -10,6 +10,12 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @cars = @client.cars
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @cars }
+    end
   end
 
   def create

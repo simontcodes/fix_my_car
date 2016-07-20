@@ -1,14 +1,17 @@
 <h1>New Job</h1>
 
-  <% @cars.each do |car| %>
-      client: <%= car.client_id %><br>
-  <% end %>
-
   <%= form_for @job do |f| %>
-    <p> <%= f.label :car_id%> <%= collection_select :job, :car_id, Car.all, :id, :model%> </p>
+    <p> <%= f.label :client%> <%= collection_select :client, :client_id, Client.all, :id, :name%> </p>
+    <%= f.select :car_id , []%>
     <p> <%= f.label :mechanic_id%> <%= collection_select :job, :mechanic_id, Mechanic.all, :id, :name%> </p>
   <p> <%= f.submit %>
  <% end %>
+
+
+
+<body>
+
+</body>
 
 
 
