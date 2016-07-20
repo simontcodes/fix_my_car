@@ -10,5 +10,14 @@
 #Client.create(name: 'Simon Tang', email: 'simon.tang.arias@gmail.com', phone: '4162007371', cedula: 17884036)
 
 
-#Car.create(make:"Ford", model: 'Focus', year: '01/01/2008', color: 'black', plate: 'A2E563G', client_id: 1)
-#Car.create(make:"Audi", model: 'A4', year: '01/01/2005', color: 'silver', plate: 'B2E11W2', client_id: 1)
+# a = Car.create(make:"Ford", model: 'Focus', year: '01/01/2008', color: 'black', plate: 'A2E563G', client_id: 1)
+# b = Car.create(make:"Toyota", model: 'A4', year: '01/01/2005', color: 'silver', plate: 'B2E11W2', client_id: 1)
+# c = Car.create(make:"Lincon", model: 'A4', year: '01/01/2005', color: 'orange', plate: 'B2E16W2', client_id: 3)
+# d = Car.create(make:"Cadillac", model: 'A4', year: '01/01/2005', color: 'grey', plate: 'B2E15W2', client_id: 4)
+# e = Car.create(make:"Chevrolet", model: 'A4', year: '01/01/2005', color: 'white', plate: 'B2E1uW2', client_id: 5)
+#
+# Job.create(car_id: a.id, mechanic_id: 1)
+# Job.create(car_id: b.id, mechanic_id: 2)
+# Job.create(car_id: c.id, mechanic_id: 1)
+
+Job.create(car_id: 18, mechanic_id: 1, aasm_state: 'completed')

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'dashboards#index'
   get '/dashboards' => 'dashboards#index'
+  get '/history' => 'history#index'
   resources :jobs
   resources :mechanics
   resources :clients do
