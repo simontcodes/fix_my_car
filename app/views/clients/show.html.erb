@@ -1,20 +1,21 @@
 <p> <strong> <%= @client.name %> </strong> </p>
-<p> <%= @client.email %> </p>
-<p> <%= @client.phone %> </p>
-<p> <%= @client.cedula %> </p>
-<p> <%= @client.id %> </p>
+<p>Email: <%= @client.email %> </p>
+<p>Phone: <%= @client.phone %> </p>
+<p>SIN: <%= @client.cedula %> </p>
+<p>id: <%= @client.id %> </p>
 
 
 <div class="">
    <% @client.cars.each do |car| %>
-  <p>  <%= car.make %>  </p>
-  <p>  <%= car.model %>  </p>
-  <p>  <%= car.year %>  </p>
-  <p>  <%= car.color %>  </p>
-  <p>  <%= car.plate %>  </p>
-  <p>  <%= car.id %>  </p>
+  <p>Make:  <%= car.make %>  </p>
+  <p>Model:  <%= car.model %>  </p>
+  <p>Year:  <%= car.year %>  </p>
+  <p>Color:  <%= car.color %>  </p>
+  <p>Plate:  <%= car.plate %>  </p>
+  <p>id:  <%= car.id %>  </p>
     <% end %>
 </div>
 
 <p> <%= link_to 'Back to all clients', clients_path %> </p>
 <p> <%= link_to 'Add new Car to this Client', new_client_car_path(@client.id) %> </p>
+<p> <%= link_to 'Back to main', root_path %> </p>
