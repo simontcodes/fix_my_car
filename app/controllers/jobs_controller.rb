@@ -7,9 +7,7 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
     @status = Status.new
-
-
-
+    @statuses = Status.all
   end
 
   def new
