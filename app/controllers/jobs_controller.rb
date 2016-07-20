@@ -6,10 +6,12 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-
+    @status = Status.new
+    @statuses = Status.all
   end
 
   def new
+
     @job = Job.new
     @params = params
 
@@ -28,15 +30,23 @@ class JobsController < ApplicationController
     else
       render :new
     end
-
   end
 
+# def update
+#   @status = Status.new(status_params)
+#
+#   if @status.save
+#     redirect_to job_path(@job.id)
+#   else
+#     render :new
+#   end
+end
   private
 
   def job_params
     params.require(:job).permit(:car_id, :mechanic_id)
   end
 
-
-
-end
+  # def status_params
+  #   params.require(:status).permit(:message)
+  # end

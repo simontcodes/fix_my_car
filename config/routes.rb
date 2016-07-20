@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/history' => 'history#index'
   resources :jobs
   resources :mechanics
+  resources :statuses
   resources :clients do
     resources :cars
   end

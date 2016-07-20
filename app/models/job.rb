@@ -32,7 +32,9 @@ class Job < ApplicationRecord
 
 
   end
+
   has_many :statuses
+  accepts_nested_attributes_for :statuses
   has_one :cost
   belongs_to :mechanic
   belongs_to :car

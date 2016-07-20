@@ -1,10 +1,38 @@
 
-<p> <%= @job.car.client.name %> </p>
-<p> <%= @job.car.client.phone %> </p>
-<p> <%= @job.car.client.email %> </p>
-<p> <%= @job.car.make %> </p>
-<p> <%= @job.car.model %> </p>
-<p> <%= @job.car.year %> </p>
-<p> <%= @job.car.color %> </p>
-<p> <%= @job.car.plate %> </p>
-<p> <%= @job.mechanic.name %> </p>
+<p> Name: <%= @job.car.client.name %> </p>
+<p> Phone: <%= @job.car.client.phone %> </p>
+<p> Email: <%= @job.car.client.email %> </p>
+<p> Make: <%= @job.car.make %> </p>
+<p> Model: <%= @job.car.model %> </p>
+<p> Year: <%= @job.car.year %> </p>
+<p> Color:  <%= @job.car.color %> </p>
+<p> Plate: <%= @job.car.plate %> </p>
+<p> Mechanic: <%= @job.mechanic.name %> </p>
+<p> Status: <%= @job.aasm_state %> </p>
+<p> id: <%= @job.id %> </p>
+
+<p> <h2>Log History </h2> </p>
+<%= @statuses.each do |status| %>
+  <% if status.job_id == @job.id %>
+<p> <strong> State: <%= status.current_state %> </strong> </p>
+<p> Update: <%= status.message %> </p>
+<% end %>
+<% end %>
+
+
+
+
+
+
+<p> <h2> Update Job </h2> </p>
+
+<%= form_for @status do |f| %>
+<p> <%= f.label :message %> <%= f.text_field :message %> </p>
+<%= f.hidden_field(:job_id,value: @job.id)%>
+
+<%= f.submit %>
+  <% end %>
+
+
+
+<p> <%= link_to 'Back to main', root_path %> </p>

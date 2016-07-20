@@ -20,4 +20,6 @@
 # Job.create(car_id: b.id, mechanic_id: 2)
 # Job.create(car_id: c.id, mechanic_id: 1)
 
-Job.create(car_id: 18, mechanic_id: 1, aasm_state: 'completed')
+#Job.create(car_id: 18, mechanic_id: 1, aasm_state: 'completed')
+
+Status.create(message: 'hola', current_state: 'hola2', job_id: 3)

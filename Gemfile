@@ -30,7 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+#handles the state of the job
 gem 'aasm'
+
+#hamdles the upload of the budget file
+gem 'carrierwave'
 
 
 
