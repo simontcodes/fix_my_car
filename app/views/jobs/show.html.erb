@@ -11,28 +11,27 @@
 <p> Status: <%= @job.aasm_state %> </p>
 <p> id: <%= @job.id %> </p>
 
+
+<p> <h2> Update Job </h2> </p>
+
+
+
+<%= form_for @status, :html => {:multipart => true} do |f| %>
+<p> <%= f.label :message %> <%= f.text_field :message %> </p>
+<%= f.hidden_field(:job_id,value: @job.id)%>
+<p> <%= f.file_field :budget %> </p>
+
+
+
+<%= f.submit %>
+  <% end %>
+  <p> <%= link_to 'Back to main', root_path %> </p>
+
+
 <p> <h2>Log History </h2> </p>
-<%= @statuses.each do |status| %>
+<% @statuses.each do |status| %>
   <% if status.job_id == @job.id %>
 <p> <strong> State: <%= status.current_state %> </strong> </p>
 <p> Update: <%= status.message %> </p>
 <% end %>
 <% end %>
-
-
-
-
-
-
-<p> <h2> Update Job </h2> </p>
-
-<%= form_for @status do |f| %>
-<p> <%= f.label :message %> <%= f.text_field :message %> </p>
-<%= f.hidden_field(:job_id,value: @job.id)%>
-
-<%= f.submit %>
-  <% end %>
-
-
-
-<p> <%= link_to 'Back to main', root_path %> </p>

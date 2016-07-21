@@ -30,6 +30,16 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'mail', '~> 2.6', '>= 2.6.4'
+
+gem 'rspec', '~> 3.5'
+
+
+#displays the emails in another tab rather than in console
+gem "letter_opener", :group => :development
+
+gem 'launchy', '~> 2.4', '>= 2.4.3'
+
 
 #handles the state of the job
 gem 'aasm'
@@ -37,6 +47,8 @@ gem 'aasm'
 #hamdles the upload of the budget file
 gem 'carrierwave'
 
+#protects user info
+gem "figaro"
 
 
 group :development, :test do

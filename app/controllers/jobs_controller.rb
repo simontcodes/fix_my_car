@@ -26,6 +26,7 @@ class JobsController < ApplicationController
     @params = params
 
     if @job.save
+      ClientMailer.received(@job.car.client).deliver_later
       redirect_to dashboards_path, notice: "Client Created Successfully!"
     else
       render :new
