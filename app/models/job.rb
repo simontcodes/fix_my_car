@@ -53,8 +53,7 @@ class Job < ApplicationRecord
          :from => twilio_number,
          :to => "+14168858365",
          :body => "test",
-         # US phone numbers can make use of an image as well.
-         # :media_url => image_url
+        #car.client.phone
        )
        puts message.to
    end
