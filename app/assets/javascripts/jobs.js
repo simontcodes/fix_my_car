@@ -3,7 +3,6 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(function() {
    $('#client_client_id').on('change',function() {
-    console.log("works")
     console.log($(this).val());
    $.ajax({
        url: '/clients/' + $(this).val(),
@@ -11,21 +10,13 @@ $(function() {
        data: {},
        dataType: 'json'
      }).done(function(responseData) {
-       cars_array = []
-      for (var i = 0; i < responseData.length; i++) {
-        model = responseData[i].model
-        cars_array.push(model)
-      }
-       console.log(responseData);
-       console.log(cars_array);
-
+       $('#job_car_id').html("")
        for (var i = 0; i < responseData.length; i++) {
          var CarItem =  $('<option class="car"></option>');
          CarItem.attr('value', responseData[i].id);
          CarItem.html(responseData[i].model)
          $('#job_car_id').append(CarItem)
        }
-
      });
    });
 });

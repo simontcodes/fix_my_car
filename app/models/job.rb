@@ -1,6 +1,12 @@
 class Job < ApplicationRecord
   include AASM
 
+  has_many :statuses
+  accepts_nested_attributes_for :statuses
+  has_one :cost
+  belongs_to :mechanic
+  belongs_to :car
+
   aasm do
     state :received, initial: true
     state :diagnosed
@@ -30,12 +36,9 @@ class Job < ApplicationRecord
       transitions from: :repairing, to: :completed
     end
 
-
   end
 
-  has_many :statuses
-  accepts_nested_attributes_for :statuses
-  has_one :cost
-  belongs_to :mechanic
-  belongs_to :car
+#Twilio Stuff
+
+
 end
