@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :jobs
   resources :mechanics
   resources :statuses
+  resources :costs
   resources :clients do
     resources :cars
   end

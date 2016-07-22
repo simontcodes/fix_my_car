@@ -1,11 +1,12 @@
 class Job < ApplicationRecord
   include AASM
 
-  after_save :send_message
+  #after_save :send_message
 
   has_many :statuses
   accepts_nested_attributes_for :statuses
   has_one :cost
+  accepts_nested_attributes_for :cost
   belongs_to :mechanic
   belongs_to :car
 

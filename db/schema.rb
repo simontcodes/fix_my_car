@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160720234203) do
   end
 
   create_table "costs", force: :cascade do |t|
-    t.boolean  "approved"
+    t.boolean  "approved", :default => false
     t.integer  "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

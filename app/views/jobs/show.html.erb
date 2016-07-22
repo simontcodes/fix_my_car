@@ -16,15 +16,20 @@
 
 
 
-<%= form_for @status, :html => {:multipart => true} do |f| %>
+<%= form_for @status do |f| %>
 <p> <%= f.label :message %> <%= f.text_field :message %> </p>
 <%= f.hidden_field(:job_id,value: @job.id)%>
-<p> <%= f.file_field :budget %> </p>
-
-
-
 <%= f.submit %>
   <% end %>
+
+
+
+<%= form_for @cost, :html => {:multipart => true} do |f| %>
+<p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
+<p> <%= f.label :Approved? %> <%= f.check_box :approved %> </p>
+<%= f.hidden_field(:job_id,value: @job.id)%>
+<%= f.submit %>
+<% end %>
   <p> <%= link_to 'Back to main', root_path %> </p>
 
 

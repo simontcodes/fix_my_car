@@ -9,6 +9,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @status = Status.new
     @statuses = Status.all
+    @cost = Cost.new
   end
 
   def new
