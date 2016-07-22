@@ -4,9 +4,6 @@ class StatusesController < ApplicationController
      @status = Status.new
    end
 
-  # def create
-  #
-  # end
 def create
   @status = Status.new(status_params)
 

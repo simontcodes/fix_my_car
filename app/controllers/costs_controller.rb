@@ -3,11 +3,18 @@ class CostsController < ApplicationController
     @cost = Status.new
   end
 
+  def show
+    uploader = Cost.find(params[:id]).budget
+
+    send_file(uploader.file.file)
+  end
+
 def create
+
  @cost = Cost.new(cost_params)
 
  if @cost.save
-   redirect_to job_path(@cost.job_id)
+   redirect_to cost_path(@cost.id)
  else
    render :new
  end

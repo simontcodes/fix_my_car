@@ -19,16 +19,22 @@
 <%= form_for @status do |f| %>
 <p> <%= f.label :message %> <%= f.text_field :message %> </p>
 <%= f.hidden_field(:job_id,value: @job.id)%>
+
+  <% if @job.aasm_state == 'budgeted' %>
+
+    <%= f.fields_for :costs do |costs_fields| %>
+
+   <p> <%= costs_fields.label :Budget %> <%= costs_fields.file_field :budget %> </p>
+   <p> <%= costs_fields.label :Approved? %> <%= costs_fields.check_box :approved %> </p>
+   <%= costs_fields.hidden_field(:job_id,value: @job.id)%>
+   <% end %>
+   <% end %>
+
 <%= f.submit %>
   <% end %>
 
-
-
-<%= form_for @cost, :html => {:multipart => true} do |f| %>
-<p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
-<p> <%= f.label :Approved? %> <%= f.check_box :approved %> </p>
-<%= f.hidden_field(:job_id,value: @job.id)%>
-<%= f.submit %>
+  <% if @job.aasm_state == 'repairing' %>
+<%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
 <% end %>
   <p> <%= link_to 'Back to main', root_path %> </p>
 
