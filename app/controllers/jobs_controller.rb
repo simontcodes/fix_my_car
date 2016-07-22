@@ -21,8 +21,8 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      binding.pry
-      # ClientMailer.received(@job.car.client).deliver_later
+
+      ClientMailer.received(@job.car.client).deliver_later
       # send_message("+14168858365","hihihi")
       redirect_to dashboards_path, notice: "Job Created Successfully!"
 
