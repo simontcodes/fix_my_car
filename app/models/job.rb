@@ -50,6 +50,10 @@ class Job < ApplicationRecord
        twilio_number = "+16474964559"
        client = Twilio::REST::Client.new account_sid, auth_token
 
+        # response = client.outgoing_caller_ids.create(
+        # phone_number: "+14168858365"
+        #   )
+        #   puts response.validation_code
        message = client.account.messages.create(
          :from => twilio_number,
          :to => "+14168858365",
