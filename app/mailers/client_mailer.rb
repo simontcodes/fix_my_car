@@ -6,4 +6,10 @@ class ClientMailer < ApplicationMailer
     mail(to: @client.email, subject: "Car received")
   end
 
+  def finished(client)
+    @client = client
+    mail(to: @client.email, subject: "Car finished")
+  end
+
+
 end

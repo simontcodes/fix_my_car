@@ -14,7 +14,7 @@ def create
  @cost = Cost.new(cost_params)
 
  if @cost.save
-   redirect_to job_path(@cost.job.id)
+   redirect_to job_path(@cost.job.token)
  else
    render :new
  end

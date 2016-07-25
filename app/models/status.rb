@@ -15,6 +15,7 @@ class Status < ApplicationRecord
       self.job.repair!
     elsif self.job.repairing?
       self.job.complete!
+      ClientMailer.finished(self.job.car.client).deliver_later
     end
   end
 

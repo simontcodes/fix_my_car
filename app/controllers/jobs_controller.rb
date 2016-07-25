@@ -50,7 +50,9 @@ end
   end
   #
   # def send_message(phone_number, alert_message)
-  #   #test account_sid = "AC5bb068e864539b01f20f046a8635c262"
+  #   #
+
+ account_sid = "AC5bb068e864539b01f20f046a8635c262"
   #   #test auth_token = "189c79a9541f497d17192574166f5c53"
   #   account_sid = Rails.application.secrets.twilio_key
   #   auth_token = Rails.application.secrets.twilio_auth

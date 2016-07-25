@@ -26,7 +26,7 @@
 <%= form_for @cost, :html => {:multipart => true} do |f| %>
 <p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
 <p> <%= f.label :Approved? %> <%= f.check_box :approved %> </p>
-<%= f.hidden_field(:job_id,value: @job.id)%>
+<%= f.hidden_field(:job_id, value: @job.id)%>
 <%= f.submit %>
 <% end %>
 <% end %>

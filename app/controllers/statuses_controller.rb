@@ -8,7 +8,7 @@ def create
   @status = Status.new(status_params)
 
   if @status.save
-    redirect_to job_path(@status.job_id)
+    redirect_to job_path(@status.job.token)
   else
     render :new
   end
