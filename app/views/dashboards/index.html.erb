@@ -1,5 +1,41 @@
-<p> <%= link_to 'Open Jobs', jobs_path %> </p>
-<p> <%= link_to 'New job', new_job_path %> </p>
-<p> <%= link_to 'Clients', clients_path %> </p>
-<p> <%= link_to 'History', history_path %> </p>
-<p> <%= link_to 'Mechanics', mechanics_path %> </p>
+<ul class="content-grid">
+  <li>
+    <a href="/jobs">
+      <span>
+        <%= image_tag ("car.jpg"), class: "content-grid-icon cbp-ig-icon-job" %></span>
+      <h3 class="content-grid-title">  Open Jobs </h3>
+    </a>
+  </li>
+
+  <li>
+    <a href="/jobs/new">
+      <span>
+      <%= image_tag ("job.jpg"), class: "content-grid-icon cbp-ig-icon-job" %></span>
+      <h3 class="content-grid-title">  New Job </h3>
+    </a>
+  </li>
+
+  <li>
+    <a href="/clients">
+      <span>
+      <%= image_tag ("car.jpg"), class: "content-grid-icon cbp-ig-icon-job" %></span>
+      <h3 class="content-grid-title">  Clients  </h3>
+    </a>
+  </li>
+
+  <li>
+    <a href="/history">
+      <span>
+      <%= image_tag ("car.jpg"), class: "content-grid-icon cbp-ig-icon-job" %></span>
+      <h3 class="content-grid-title">  Job History</h3>
+    </a>
+  </li>
+
+  <li>
+    <a href="/mechanics">
+      <span>
+      <%= image_tag ("car.jpg"), class: "content-grid-icon cbp-ig-icon-job" %></span>
+      <h3 class="content-grid-title">  Mechanics </h3>
+    </a>
+  </li>
+</ul>

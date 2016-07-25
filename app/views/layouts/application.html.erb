@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>FixMyCar</title>
     <%= csrf_meta_tags %>
 
@@ -9,7 +10,16 @@
   </head>
 
   <body>
-    <h1>Fix My Car</h1>
-    <%= yield %>
+    
+    <nav class="navbar-header">
+      <h2 id="navbar-nav">Fix my car</h2>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+    </ul>
+    </nav>
+
+        <%= yield %>
   </body>
 </html>
