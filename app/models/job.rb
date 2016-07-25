@@ -12,27 +12,27 @@ class Job < ApplicationRecord
 
   aasm do
     state :received, initial: true
-    state :diagnosed
-    state :budgeted
-    state :approved
+    state :diagnosing
+    state :budgeting
+    state :waiting_for_approval
     state :repairing
     state :completed
 
 
     event :diagnose do
-      transitions from: :received, to: :diagnosed
+      transitions from: :received, to: :diagnosing
     end
 
     event :budget do
-      transitions from: :diagnosed, to: :budgeted
+      transitions from: :diagnosing, to: :budgeting
     end
 
     event :approve do
-      transitions from: :budgeted, to: :approved
+      transitions from: :budgeting, to: :waiting_for_approval
     end
 
     event :repair do
-      transitions from: :approved, to: :repairing
+      transitions from: :waiting_for_approval, to: :repairing
     end
 
     event :complete do

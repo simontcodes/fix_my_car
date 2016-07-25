@@ -17,6 +17,6 @@ end
 private
 
   def status_params
-    params.require(:status).permit(:message, :job_id)
+    params.require(:status).permit(:message, :job_id, cost_attributes: [:budget, :job_id, :approved])
   end
 end
