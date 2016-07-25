@@ -1,2 +1,2 @@
 <p> Thanks for using our services <%= @client.name %>! </P>
-<p> Follow this link to check the progress of your car </P>
+<p> Follow this <%= link_to "link", job_url(id: @job.token) %> to check the progress of your car </P>
