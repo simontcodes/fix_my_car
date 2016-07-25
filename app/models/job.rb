@@ -1,6 +1,7 @@
 class Job < ApplicationRecord
   include AASM
 
+  before_create :generate_token
   #after_save :send_message
 
   has_many :statuses
@@ -62,6 +63,12 @@ class Job < ApplicationRecord
        )
        puts message.to
    end
+
+   def generate_token
+     digest = Digest::SHA256.new
+     self.token = digest.update("#{SecureRandom.uuid}").to_s
+   end
+
 
 
 #Twilio Stuff

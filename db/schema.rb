@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720234203) do
+ActiveRecord::Schema.define(version: 20160725204355) do
 
   create_table "cars", force: :cascade do |t|
     t.string   "make"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160720234203) do
   end
 
   create_table "costs", force: :cascade do |t|
-    t.boolean  "approved", :default => false
+    t.boolean  "approved"
     t.integer  "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160720234203) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "aasm_state"
+    t.string   "token"
   end
 
   create_table "mechanics", force: :cascade do |t|
