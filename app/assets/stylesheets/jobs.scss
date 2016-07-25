@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//red: #e55a5a
+
 .content-grid {
   list-style: none;
-  padding: 0 0 50px 0;
+  // padding: 0 0 50px 0;
   margin: 0;
 }
 
@@ -73,14 +75,17 @@
 
 
 .cbp-ig-icon-job{
-  max-width: 100%;
+  max-width: 50%;
+  padding-left: 25%;
+  padding-right: 25%;
+  margin: 0px;
 
   // width: 100px;
 }
 
 /* titles */
 .content-grid .content-grid-title {
-  margin: 20px 0 10px 0;
+  margin: 40px 0 10px 0;
   padding: 10px 0 0 0;
   font-size: 2em;
   position: relative;
@@ -105,9 +110,9 @@
 
 /* Hover styles */
 
-.content-grid li > a:hover {
-  background: #47a3da;
-}
+// .content-grid li > a:hover {
+//   background: #47a3da;
+// }
 
 .content-grid li > a:hover .content-grid-icon {
   -webkit-transform: translateY(10px);
@@ -118,14 +123,14 @@
 
 .content-grid li > a:hover .content-grid-icon:before,
 .content-grid li > a:hover .content-grid-title {
-  color: #fff;
+  color: #e55a5a;
 }
 
 .content-grid li > a:hover .content-grid-title {
-  -webkit-transform: translateY(-30px);
-  -moz-transform: translateY(-30px);
-  -ms-transform: translateY(-30px);
-  transform: translateY(-30px);
+  -webkit-transform: translateY(-20px);
+  -moz-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  transform: translateY(-20px);
 }
 
 .content-grid li > a:hover .content-grid-title:before {
