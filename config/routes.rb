@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   root 'dashboards#index'
   get '/dashboards' => 'dashboards#index'
   get '/history' => 'history#index'
