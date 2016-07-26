@@ -12,13 +12,13 @@
   <body>
 
     <nav class="navbar-header">
-      <div>
-      <h2 id="navbar-nav">Fix my car</h2>
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Home</a></li>
-          <li><a href="">Home</a></li>
-        </ul>
+      <div class="container">
+        <h2> <%= link_to "Fix my car", dashboards_path, id: "navbar-title" %> </h2>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+          </ul>
 
       <% if current_user %>
         <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
