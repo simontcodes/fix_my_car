@@ -9,17 +9,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    
+
     <nav class="navbar-header">
-      <h2 id="navbar-nav">Fix my car</h2>
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-    </ul>
+      <div class="container">
+        <h2> <%= link_to "Fix my car", dashboards_path, id: "navbar-title" %> </h2>
+          <ul>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">Home</a>
+            </li>
+          </ul>
+      </div>
     </nav>
 
-        <%= yield %>
+  <body>
+    <%= yield %>
   </body>
+
 </html>
