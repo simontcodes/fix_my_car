@@ -58,34 +58,53 @@
 <p> <h2> Update Job </h2> </p>
 
 <% if @job.aasm_state != 'budgeting' %>
-<%= form_for @status do |f| %>
-<p> <%= f.label :message %> <%= f.text_field :message %> </p>
-<%= f.hidden_field(:job_id,value: @job.id)%>
-<%= f.submit %>
+  <%= form_for @status do |f| %>
+    <p> <%= f.label :message %> <%= f.text_field :message %> </p>
+    <%= f.hidden_field(:job_id,value: @job.id)%>
+    <%= f.submit %>
   <% end %>
 <% end %>
 
 <% if @job.aasm_state == 'budgeting' %>
-<%= form_for @cost, :html => {:multipart => true} do |f| %>
-<p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
-<p> <%= f.label :Approved? %> <%= f.check_box :approved %> </p>
-<%= f.hidden_field(:job_id, value: @job.id)%>
-<%= f.submit %>
-<% end %>
+  <%= form_for @cost, :html => {:multipart => true} do |f| %>
+    <p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
+    <p> <%= f.label :Approved? %> <%= f.check_box :approved %> </p>
+    <%= f.hidden_field(:job_id, value: @job.id)%>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 
 <% if @job.aasm_state == 'waiting_for_approval' %>
-<%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
+  <%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
 <% end %>
 
 
-  <p> <%= link_to 'Back to main', root_path %> </p>
+<p> <%= link_to 'Back to main', root_path %> </p>
 
+<table>
+  <tbody>
+    <h2>Log History </h2>
+    <tr>
+      <td>
+        State:
+      </td>
+      <td>
+        Message:
+      </td>
+      <td>
+        Date Updated:
+      </td>
+    </tr>
 
-<p> <h2>Log History </h2> </p>
-<% @statuses.each do |status| %>
-  <% if status.job_id == @job.id %>
-<p> <strong> State: <%= status.current_state %> </strong> </p>
-<p> Update: <%= status.message %> </p>
-<% end %>
-<% end %>
+    <% @statuses.each do |status| %>
+      <% if status.job_id == @job.id %>
+        <tr>
+          <td><%= status.current_state %></td>
+          <td><%= status.message %> </td>
+          <td><%= status.created_at %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+  </tbody>
+</table>

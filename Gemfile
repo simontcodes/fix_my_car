@@ -57,6 +57,10 @@ gem "twilio-ruby"
 
 #user authentication
 gem 'sorcery'
+#front end dependencies
+gem 'bourbon', '5.0.0.beta.6'
+gem 'neat'
+gem 'autoprefixer-rails'
 
 
 group :development, :test do

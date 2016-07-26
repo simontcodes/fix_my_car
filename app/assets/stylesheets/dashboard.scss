@@ -2,6 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//header
+.navbar-header {
+  overflow: hidden;
+  background-color: white;
+  color: #333;
+  line-height: 20px;
+  height:50px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#navbar-title {
+  float: left;
+  text-align: center;
+  color: black;
+}
+
+#navbar-items{
+  list-style-type: none;
+  float: right;
+}
+
+.navbar-header > div > ul > li {
+  float: right;
+  padding-left: 10px;
+}
+
+.navbar-header > div > ul > li > a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar-header > ul > li > a:hover {
+  background-color: #111;
+}
+
+//Dashboard Body
+
 .content-grid {
   list-style: none;
   // padding: 0 0 50px 0;
@@ -25,17 +65,11 @@
   float: left;
   height: 420px;
   text-align: center;
-  border-top: 1px solid white;
 }
 
 /* we are using a combination of borders and box shadows to control the grid lines */
 .content-grid li:nth-child(-n+3){
   border-top: none;
-}
-
-.content-grid li:nth-child(3n-1),
-.content-grid li:nth-child(3n-2) {
-  box-shadow: 1px 0 0 white;
 }
 
 /* anchor style */
@@ -73,7 +107,7 @@
 
 
 .cbp-ig-icon-job{
-  max-width: 50%;
+  // max-width: 100%;
   padding-left: 25%;
   padding-right: 25%;
   margin: 0px;
@@ -92,19 +126,19 @@
   transition: transform 0.2s;
 }
 
-.content-grid .content-grid-title:before {
-    content: '';
-  position: absolute;
-  background: white;
-  width: 160px;
-  height: 6px;
-  top: 0px;
-  left: 50%;
-  margin: -10px 0 0 -80px;
-  -webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
-  -moz-transition: margin-top 0.2s;
-  transition: margin-top 0.2s;
-}
+// .content-grid .content-grid-title:before {
+//     content: '';
+//   position: absolute;
+//   background: white;
+//   width: 160px;
+//   height: 6px;
+//   top: 0px;
+//   left: 50%;
+//   margin: -10px 0 0 -80px;
+//   -webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
+//   -moz-transition: margin-top 0.2s;
+//   transition: margin-top 0.2s;
+// }
 
 /* Hover styles */
 
@@ -143,9 +177,7 @@
   }
 
   /* reset the grid lines */
-  .content-grid li:nth-child(-n+3){
-    border-top: 1px solid #ddd;
-  }
+
 
   .content-grid li:nth-child(3n-1),
   .content-grid li:nth-child(3n-2) {
@@ -156,9 +188,7 @@
     border-top: none;
   }
 
-  .content-grid li:nth-child(2n-1) {
-    box-shadow: 1px 0 0 #ddd;
-  }
+
 }
 
 @media screen and (max-width: 41.6em) {
@@ -166,9 +196,7 @@
     width: 100%;
   }
 
-  .content-grid li:nth-child(-n+2){
-    border-top: 1px solid #ddd;
-  }
+
 
   .content-grid li:nth-child(2n-1) {
     box-shadow: none
