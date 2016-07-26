@@ -1,8 +1,16 @@
-<h1>UserSessions#new</h1>
+<div class="landing_container">
 
-<h1>Login</h1>
+<div class="login_container">
+  <%= image_tag ("logo.jpg"), class: "landing_picture" %></span>
+  <% if current_user %>
+    <h3 class="loggedin_title">You are already logged in!</h3>
+  <% else %>
+      <div class="login_form">
+      <h3 class="login_title">Log In</h3>
+      <%= render 'form' %>
+  <% end %>
+    </div>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', user_sessions_path %>
-<p>Find me in app/views/user_sessions/new.html.erb</p>
+
+</div>
