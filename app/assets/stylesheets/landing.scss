@@ -26,6 +26,7 @@
   @include span-columns(6);
   display: block;
   margin-left: 4rem;
+  border: solid black;
 }
 
 .login_title {
@@ -43,6 +44,6 @@
 }
 
 .login_field{
-  width: 100%;
+  width: 70%;
   display: block;
 }
