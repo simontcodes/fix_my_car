@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725205300) do
+ActiveRecord::Schema.define(version: 20160727055720) do
 
   create_table "cars", force: :cascade do |t|
     t.string   "make"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20160725205300) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "position"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

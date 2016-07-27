@@ -2,6 +2,7 @@
 <h1>Open Jobs</h1>
 
  <% @jobs.each do |job| %>
- <p>  <%= link_to "Repair of #{job.car.client.name}", job_path(id: job.token) %> </p>
-
+  <% if job.aasm_state != 'completed' %>
+ <p> <%= link_to "Repair of #{job.car.client.name}", job_path(id: job.token) %> </p>
+  <% end %>
  <% end %>
