@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //header
-.test-container {
+.header-outer-container {
   @include outer-container;
   height: 50px;
   letter-spacing: 2px;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.test2-container {
+.header-container {
   @include span-columns(12);
   height: 100%;
 }
@@ -35,7 +35,7 @@
 
 }
 
-#test-title {
+#header-title {
   display: inline-block;
   color: black;
   font-size: 1.5rem;
@@ -53,67 +53,11 @@
   text-align: center;
 }
 
-
-
-
-
-
-
-
-.navbar-header {
-  @include span-columns(12);
-  overflow: hidden;
-  background-color: white;
-  color: #333;
-  // line-height: 20px;
-  height:70px;
-  letter-spacing: 2px;
-  margin-top: 50px;
-  margin-bottom: 30px;
-    // background-color: red;
-}
-
-.container-header {
-  @include span-columns(3 of 12);
-  display: inline;
-}
-
-.nav-items {
-  @include span-columns(8 of 12);
-  display: inline;
-
-}
-
 .header-icon {
   max-height: 30px;
   max-width: 30px;
 }
 
-#navbar-title {
-  color: black;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-#navbar-items{
-  list-style-type: none;
-  float: right;
-}
-
-.navbar-header > div > ul > li {
-  float: right;
-  padding-left: 10px;
-}
-
-.navbar-header > div > ul > li > a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-}
-
-.navbar-header > ul > li > a:hover {
-  background-color: #111;
-}
 
 //Dashboard Body
 
