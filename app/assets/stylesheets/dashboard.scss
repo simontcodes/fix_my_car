@@ -3,21 +3,96 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //header
-.navbar-header {
-  overflow: hidden;
-  background-color: white;
-  color: #333;
-  line-height: 20px;
-  height:50px;
+.test-container {
+  @include outer-container;
+  height: 50px;
   letter-spacing: 2px;
   margin-top: 50px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.test2-container {
+  @include span-columns(12);
+  height: 100%;
+}
+
+.title-container {
+  @include span-columns(3 of 12);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.list-container {
+  @include span-columns(9 of 12);
+  // @include shift(7);
+  margin: 0px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+#test-title {
+  display: inline-block;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.list-container > ul > li {
+  float: right;
+  padding-left: 10px;
+}
+
+.navbar-header > div > ul > li > a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+.navbar-header {
+  @include span-columns(12);
+  overflow: hidden;
+  background-color: white;
+  color: #333;
+  // line-height: 20px;
+  height:70px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+    // background-color: red;
+}
+
+.container-header {
+  @include span-columns(3 of 12);
+  display: inline;
+}
+
+.nav-items {
+  @include span-columns(8 of 12);
+  display: inline;
+
+}
+
+.header-icon {
+  max-height: 30px;
+  max-width: 30px;
 }
 
 #navbar-title {
-  float: left;
-  text-align: center;
   color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 #navbar-items{

@@ -1,14 +1,17 @@
 <h1>New Job</h1>
 
+<div class="form">
   <%= form_for @job do |f| %>
     <p> <%= f.label :client%> <%= collection_select :client, :client_id, Client.all, :id, :name, {prompt: 'Select a client'}%> </p>
     <p> <strong> <%= link_to 'Add a New Client', new_client_path %> </strong> </p>
-    <p> <%= f.label :car %> <%= f.select :car_id , [], {prompt: 'Select a car'}%> </p>
-    <!-- <p> <%= link_to 'Add new Car to this Client', new_client_car_path(:client) %> </p> -->
+    <div class="carform">
+      <p> <%= f.label :car %> <%= f.select :car_id , [], {prompt: 'Select a car'}%> </p>
+      <strong><a href="#" id="newcar">Add a new car</a></strong>
+    </div>
     <p> <%= f.label :mechanic_id%> <%= collection_select :job, :mechanic_id, Mechanic.all, :id, :name, {prompt: 'Select a mechanic'} %> </p>
   <p> <%= f.submit %>
  <% end %>
-
+</div>
 
 
 <body>
