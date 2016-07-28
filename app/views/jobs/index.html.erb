@@ -1,8 +1,32 @@
+<h2>Open Jobs </h2>
 
-<h1>Open Jobs</h1>
+ <table>
+   <tbody>
+     <tr>
+       <td>
+         Job Name:
+       </td>
+       <td>
+         Job Status:
+       </td>
+       <td>
+         Job Start Date:
+       </td>
+       <td>
+         Link:
+       </td>
+     </tr>
 
- <% @jobs.each do |job| %>
-  <% if job.aasm_state != 'completed' %>
- <p> <%= link_to "Repair of #{job.car.client.name}", job_path(id: job.token) %> </p>
-  <% end %>
- <% end %>
+     <% @jobs.each do |job| %>
+     <% if job.aasm_state != 'completed' %>
+         <tr>
+           <td><%= "Repair for #{job.car.client.name}" %></td>
+           <td><%= job.aasm_state %> </td>
+           <td><%= job.created_at %> </td>
+           <td> <%= link_to "Repair for #{job.car.client.name}", job_path(id: job.token) %> </td>
+         </tr>
+       <% end %>
+     <% end %>
+
+   </tbody>
+ </table>

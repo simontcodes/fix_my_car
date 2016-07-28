@@ -1,9 +1,26 @@
 <h2>All Mechanics</h2>
-
-<% @mechanics.each do |mechanic| %>
-
-<p>  <%= link_to "#{mechanic.name}", mechanic_path(mechanic) %> </p>
-
-<% end %>
-
 <p> <strong> <%= link_to 'Add a New Mechanic', new_mechanic_path %> </strong> </p>
+
+ <table>
+  <tbody>
+     <tr>
+       <td>
+         Mechanic Name:
+       </td>
+       <td>
+         Number of jobs assigned:
+       </td>
+
+     </tr>
+
+     <% @mechanics.each do |mechanic| %>
+    <tr>
+      <td>  <%= link_to "#{mechanic.name}", mechanic_path(mechanic) %> </td>
+      <td>  <%= mechanic.jobs.count %> </td>
+    <% end %>
+    </tr>
+
+  </tbody>
+ </table>
+
+ <p> <%= link_to 'Back to main', root_path %> </p>

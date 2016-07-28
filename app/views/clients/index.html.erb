@@ -1,10 +1,30 @@
 <h2>All clients</h2>
 
-<% @clients.each do |client| %>
-
-<p>  <%= link_to "#{client.name}", client_path(client) %> </p>
-
-<% end %>
-
 <p> <strong> <%= link_to 'Add a New Client', new_client_path %> </strong> </p>
-<p> <%= link_to 'Back to main', root_path %> </p>
+
+ <table>
+   <tbody>
+     <tr>
+       <td>
+         Client Name:
+       </td>
+       <td>
+        Email:
+       </td>
+       <td>
+        Phone:
+       </td>
+     </tr>
+
+  <% @clients.each do |client| %>
+  <tr>
+    <td><%= link_to "#{client.name}", client_path(client) %> </td>
+    <td><%= client.email %></td>
+    <td><%= client.phone %></td>
+    <% end %>
+  </tr>
+
+   </tbody>
+ </table>
+
+ <p> <%= link_to 'Back to main', root_path %> </p>
