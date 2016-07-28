@@ -1,3 +1,16 @@
+<div class="progress-container">
+  <h4 id="progress-bar-title">Progress Bar:</h4>
+  <div class="progress-bar-background">
+    <div class="progress-bar">
+      <span id="<%= @job.aasm_state %>">
+        <% if @job.aasm_state == 'completed' %>
+        <%= "Job Complete"%>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>
+
 <table>
   <tbody>
 
@@ -70,7 +83,7 @@
 <% if @job.aasm_state == 'budgeting' %>
   <%= form_for @cost, :html => {:multipart => true} do |f| %>
     <p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
-  
+
     <%= f.hidden_field(:job_id, value: @job.id)%>
     <%= f.submit %>
   <% end %>

@@ -1,7 +1,30 @@
-<h2>History</h2>
+<table>
+  <tbody>
+    <h2>Log History </h2>
+    <tr>
+      <td>
+        Client
+      </td>
+      <td>
+        Car
+      </td>
+      <td>
+        Date Completed
+      </td>
+      <td>
+        Link
+      </td>
+    </tr>
 
 <% @completed_jobs.each do |job| %>
-<%= link_to "#{job.car.client.name} #{job.car.model} #{job.created_at}", job_path(job) %>
+<tr>
+  <td><%= job.car.client.name %></td>
+  <td><%= job.car.model %></td>
+  <td><%= job.car.created_at %></td>
+<td><%= link_to "View", job_path(id: job.token) %></td>
+</tr>
 <% end %>
+
+</table>
 
 <p> <%= link_to 'Back to main', root_path %> </p>
