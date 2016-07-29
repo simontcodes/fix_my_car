@@ -2,17 +2,16 @@
 <p>Email: <%= @client.email %> </p>
 <p>Phone: <%= @client.phone %> </p>
 <p>SIN: <%= @client.cedula %> </p>
-<p>id: <%= @client.id %> </p>
 
 
 <div class="">
    <% @client.cars.each do |car| %>
+  <p>  <strong> <%= 'Car' %> </strong> </p>
   <p>Make:  <%= car.make %>  </p>
   <p>Model:  <%= car.model %>  </p>
   <p>Year:  <%= car.year %>  </p>
   <p>Color:  <%= car.color %>  </p>
   <p>Plate:  <%= car.plate %>  </p>
-  <p>id:  <%= car.id %>  </p>
     <% end %>
 </div>
 

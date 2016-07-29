@@ -87,9 +87,6 @@
       <% end %>
   <% end %>
 
-
-
-
   <!-- form for approval by the client -->
   <% if @job.aasm_state == 'waiting_for_approval' %>
     <%= form_for @status do |f| %>
@@ -99,14 +96,15 @@
     <% end %>
   <% end %>
 
+
+
   <% if @job.aasm_state == 'waiting_for_approval' %>
-    <%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
+  <div class="">
+      <%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
+  </div>
   <% end %>
+
 <% end %>
-
-
-
-<p> <%= link_to 'Back to main', root_path %> </p>
 
 <table>
   <tbody>
