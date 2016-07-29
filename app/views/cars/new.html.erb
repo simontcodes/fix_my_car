@@ -13,7 +13,7 @@
    </div>
    <div class="field">
      <%= f.label :year %>
-     <%= f.date_field :year %>
+     <%= f.date_select :year, discard_day:true, discard_month:true   %>
    </div>
    <div class="field">
      <%= f.label :color %>

@@ -88,23 +88,25 @@
   <% end %>
 
   <!-- form for approval by the client -->
-  <% if @job.aasm_state == 'waiting_for_approval' %>
-    <%= form_for @status do |f| %>
-      <%= f.hidden_field(:message, value: "Budget approved by client") %>
-      <%= f.hidden_field(:job_id,value: @job.id)%>
-      <%= f.submit "Approve" %>
-    <% end %>
-  <% end %>
-
-
-
-  <% if @job.aasm_state == 'waiting_for_approval' %>
-  <div class="">
-      <%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
-  </div>
-  <% end %>
 
 <% end %>
+
+<% if @job.aasm_state == 'waiting_for_approval' %>
+  <%= form_for @status do |f| %>
+    <%= f.hidden_field(:message, value: "Budget approved by client") %>
+    <%= f.hidden_field(:job_id,value: @job.id)%>
+    <%= f.submit "Approve" %>
+  <% end %>
+<% end %>
+
+
+
+<% if @job.aasm_state == 'waiting_for_approval' %>
+<div class="">
+    <%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
+</div>
+<% end %>
+
 
 <table>
   <tbody>

@@ -1,4 +1,5 @@
 class StatusesController < ApplicationController
+  skip_before_action :require_login, only: [:create]
 
    def new
      @status = Status.new
