@@ -26,7 +26,10 @@
   @include span-columns(6);
   display: block;
   margin-left: 4rem;
+
   border: solid black;
+  padding-left: 70px;
+  padding-bottom: 20px;
 }
 
 .login_title {

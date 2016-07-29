@@ -19,8 +19,8 @@
 
               <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
               <li><%= link_to "Logout", :logout, method: :post %></li>
-              <li> Position: <%= current_user.position  %> </li>
-              <li> Logged in as: <%= current_user.name  %> </li>
+              <li> <strong> Position: </strong> <%= current_user.position  %> </li>
+              <li> <strong> Logged in as:</strong> <%= current_user.name  %> </li>
 
             <% else %>
               <li><%= link_to "Register", new_user_path %> </li>

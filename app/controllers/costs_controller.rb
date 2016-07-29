@@ -1,4 +1,5 @@
 class CostsController < ApplicationController
+  skip_before_action :require_login, only: [:show]
   def new
     @cost = Status.new
   end
