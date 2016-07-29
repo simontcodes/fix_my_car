@@ -11,30 +11,29 @@
 
   <body>
 
-    <nav class="navbar-header">
-      <div class="container">
-        <h2> <%= link_to "Fix my car", dashboards_path, id: "navbar-title" %> </h2>
-          <ul>
-            <% if current_user %>
-
-              <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
-              <li><%= link_to "Logout", :logout, method: :post %></li>
-              <li> <strong> Position: </strong> <%= current_user.position  %> </li>
-              <li> <strong> Logged in as:</strong> <%= current_user.name  %> </li>
-
-            <% else %>
-              <li><%= link_to "Register", new_user_path %> </li>
-              <li><%= link_to "Login", :login %></li>
-            <% end %>
-          </ul>
+<nav>
+<div class="header-outer-container">
+  <div class="header-container">
+    <div class="title-container">
+      <%= image_tag ("car.jpg"), class: "header-icon" %></span>
+      <%= link_to "Fix my car", dashboards_path, id: "header-title" %>
     </div>
-
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
+    <div class="list-container">
+    <ul>
+      <% if current_user %>
+        <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+        <li><%= link_to "Logout", :logout, method: :post %></li>
+        <li> Position: <%= current_user.position  %> </li>
+        <li> Logged in as: <%= current_user.name  %> </li>
+      <% else %>
+        <li><%= link_to "Register", new_user_path %> </li>
+        <li><%= link_to "Login", :login %></li>
+      <% end %>
+    </ul>
     </div>
-
-    </nav>
+  </div>
+</div>
+</nav>
 
     <%= yield %>
 

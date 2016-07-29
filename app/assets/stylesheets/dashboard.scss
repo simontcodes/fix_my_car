@@ -3,29 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //header
-.navbar-header {
-  overflow: hidden;
-  background-color: white;
-  color: #333;
-  line-height: 20px;
-  height:50px;
+.header-outer-container {
+  @include outer-container;
+  height: 50px;
   letter-spacing: 2px;
   margin-top: 50px;
   margin-bottom: 30px;
+  position: relative;
 }
 
-#navbar-title {
-  float: left;
-  text-align: center;
+.header-container {
+  @include span-columns(12);
+  height: 100%;
+}
+
+.title-container {
+  @include span-columns(3 of 12);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.list-container {
+  @include span-columns(9 of 12);
+  // @include shift(7);
+  margin: 0px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+#header-title {
+  display: inline-block;
   color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-#navbar-items{
-  list-style-type: none;
-  float: right;
-}
-
-.navbar-header > div > ul > li {
+.list-container > ul > li {
   float: right;
   padding-left: 10px;
 }
@@ -36,9 +53,11 @@
   text-align: center;
 }
 
-.navbar-header > ul > li > a:hover {
-  background-color: #111;
+.header-icon {
+  max-height: 30px;
+  max-width: 30px;
 }
+
 
 //Dashboard Body
 
