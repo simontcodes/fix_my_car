@@ -12,19 +12,15 @@
        <th>
          Job Start Date:
        </th>
-       <th>
-         Link:
-       </th>
      </tr>
 
 
      <% @jobs.each do |job| %>
      <% if job.aasm_state != 'completed' %>
          <tr>
-           <td><%= "Repair for #{job.car.client.name}" %></td>
+           <td> <%= link_to "Repair for #{job.car.client.name}", job_path(id: job.token) %> </td>
            <td><%= job.aasm_state %> </td>
            <td><%= job.created_at.strftime("%m-%d-%Y") %> </td>
-           <td> <%= link_to "Repair for #{job.car.client.name}", job_path(id: job.token) %> </td>
          </tr>
        <% end %>
      <% end %>
