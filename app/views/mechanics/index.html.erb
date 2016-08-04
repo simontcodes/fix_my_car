@@ -9,13 +9,17 @@
        <th>
          Number of jobs assigned:
        </th>
+       <th>
+         Number of jobs completed:
+       </th>
 
      </tr>
 
      <% @mechanics.each do |mechanic| %>
     <tr>
-      <td>  <%= link_to "#{mechanic.name}", mechanic_path(mechanic) %> </td>
-      <td>  <%= mechanic.jobs.count %> </td>
+      <td>  <%= "#{mechanic.name}" %> </td>
+      <td>  <%= mechanic.jobs.count - mechanic.jobs.completed.count  %> </td>
+      <td>  <%= mechanic.jobs.completed.count %> </td>
     <% end %>
     </tr>
 
