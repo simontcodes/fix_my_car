@@ -23,7 +23,7 @@
          <tr>
            <td><%= "Repair for #{job.car.client.name}" %></td>
            <td><%= job.aasm_state %> </td>
-           <td><%= job.created_at %> </td>
+           <td><%= job.created_at.strftime("%m-%d-%Y") %> </td>
            <td> <%= link_to "Repair for #{job.car.client.name}", job_path(id: job.token) %> </td>
          </tr>
        <% end %>
