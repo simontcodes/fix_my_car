@@ -72,7 +72,7 @@
 
     <% if @job.aasm_state != 'budgeting' %>
       <%= form_for @status do |f| %>
-        <p> <%= f.label :message %> <%= f.text_field :message %> </p>
+        <p> <%= f.label :message %> <%= f.text_field :message , class: "submit-button" %> </p>
         <%= f.hidden_field(:job_id,value: @job.id) %>
         <%= f.submit %>
       <% end %>
@@ -80,7 +80,7 @@
 
   <% if @job.aasm_state == 'budgeting' %>
       <%= form_for @cost, :html => {:multipart => true} do |f| %>
-        <p> <%= f.label :Budget %> <%= f.file_field :budget %> </p>
+        <p> <%= f.label :Budget %> <%= f.file_field :budget , class: "submit-button"%> </p>
 
         <%= f.hidden_field(:job_id, value: @job.id)%>
         <%= f.submit %>
@@ -90,6 +90,8 @@
   <!-- form for approval by the client -->
 
 <% end %>
+
+</br>
 
 <% if @job.aasm_state == 'waiting_for_approval' %>
   <%= form_for @status do |f| %>
