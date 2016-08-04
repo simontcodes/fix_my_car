@@ -18,7 +18,7 @@
      <% @mechanics.each do |mechanic| %>
     <tr>
       <td>  <%= "#{mechanic.name}" %> </td>
-      <td>  <%= mechanic.jobs.count - mechanic.jobs.completed.count  %> </td>
+      <td>  <%= mechanic.jobs.where.not(aasm_state: "completed").count  %> </td>
       <td>  <%= mechanic.jobs.completed.count %> </td>
     <% end %>
     </tr>

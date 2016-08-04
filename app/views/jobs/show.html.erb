@@ -105,7 +105,7 @@
 
 <% if @job.aasm_state == 'waiting_for_approval' %>
 <div class="">
-    <%= link_to "Click here to Download Budget", cost_path(@job.cost) %>
+    <button><%= link_to "Download Budget", cost_path(@job.cost) %></button>
 </div>
 <% end %>
 
@@ -114,15 +114,15 @@
   <tbody>
     <h2>Log History </h2>
     <tr>
-      <td>
+      <th>
         State:
-      </td>
-      <td>
+      </th>
+      <th>
         Message:
-      </td>
-      <td>
+      </th>
+      <th>
         Date Updated:
-      </td>
+      </th>
     </tr>
 
     <% @statuses.each do |status| %>
