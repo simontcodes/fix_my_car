@@ -1,15 +1,14 @@
 <h2>All Mechanics</h2>
-<p> <strong> <%= link_to 'Add a New Mechanic', new_mechanic_path %> </strong> </p>
 
  <table>
   <tbody>
      <tr>
-       <td>
+       <th>
          Mechanic Name:
-       </td>
-       <td>
+       </th>
+       <th>
          Number of jobs assigned:
-       </td>
+       </th>
 
      </tr>
 
@@ -22,5 +21,7 @@
 
   </tbody>
  </table>
+
+ <p> <strong> <%= link_to 'Add a New Mechanic', new_mechanic_path %> </strong> </p>
 
  <p> <%= link_to 'Back to main', root_path %> </p>

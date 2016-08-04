@@ -1,19 +1,18 @@
 <h2>All clients</h2>
 
-<p> <strong> <%= link_to 'Add a New Client', new_client_path %> </strong> </p>
 
  <table>
    <tbody>
      <tr>
-       <td>
+       <th>
          Client Name:
-       </td>
-       <td>
+       </th>
+       <th>
         Email:
-       </td>
-       <td>
+      </th>
+       <th>
         Phone:
-       </td>
+      </th>
      </tr>
 
   <% @clients.each do |client| %>
@@ -26,5 +25,6 @@
 
    </tbody>
  </table>
+ <p> <strong> <%= link_to 'Add a New Client', new_client_path %> </strong> </p>
 
  <p> <%= link_to 'Back to main', root_path %> </p>
