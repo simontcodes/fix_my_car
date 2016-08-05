@@ -68,13 +68,16 @@
 
 <% if current_user %>
 
-<h2 class="job-show-title"> Update Job </h2>
 
     <% if @job.aasm_state != 'budgeting' %>
-      <%= form_for @status do |f| %>
-        <p> <%= f.label :message %> <%= f.text_field :message , class: "submit-button" %> </p>
-        <%= f.hidden_field(:job_id,value: @job.id) %>
-        <%= f.submit %>
+      <% if @job.aasm_state != 'completed' %>
+      <h2 class="job-show-title"> Update Job </h2>
+
+        <%= form_for @status do |f| %>
+          <p> <%= f.label :message %> <%= f.text_field :message , class: "submit-button" %> </p>
+          <%= f.hidden_field(:job_id,value: @job.id) %>
+            <%= f.submit %>
+            <% end %>
       <% end %>
     <% end %>
 
