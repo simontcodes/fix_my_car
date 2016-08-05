@@ -1,6 +1,6 @@
 
 <div class="form-container">
-  <h1 class="jobtitle">New Job</h1>
+  <h1 class="jobtitle">New Repair Request</h1>
   <%= form_for @job do |f| %>
     <div class="field">
       <%= f.label "Client:"%> <%= collection_select :client, :client_id, Client.all, :id, :name, {prompt: 'Select a client'}%>
