@@ -69,8 +69,8 @@
 <% if current_user %>
 
 
-    <% if @job.aasm_state != 'budgeting' %>
-      <% if @job.aasm_state != 'completed' %>
+    <% if @job.aasm_state != 'budgeting' && @job.aasm_state != 'completed' && @job.aasm_state != 'waiting_for_approval'%>
+
       <h2 class="job-show-title"> Update Job </h2>
 
         <%= form_for @status do |f| %>
@@ -78,17 +78,12 @@
           <%= f.hidden_field(:job_id,value: @job.id) %>
             <%= f.submit %>
             <% end %>
-      <%= form_for @status do |f| %>
-        <%= f.label :message %> <%= f.text_area :message, size: "100x5", class: "submit-button" %>
-        <%= f.hidden_field(:job_id,value: @job.id) %>
-        <%= f.submit %>
-        <% end %>
-      <% end %>
+
     <% end %>
 
   <% if @job.aasm_state == 'budgeting' %>
       <%= form_for @cost, :html => {:multipart => true} do |f| %>
-        <%= f.label :Budget %> <%= f.text_area :budget , size: "100x5", class: "submit-button"%>
+        <%= f.label :Budget %> <%= f.file_field :budget , class: "submit-button"%>
 
         <%= f.hidden_field(:job_id, value: @job.id)%>
         <%= f.submit %>
@@ -113,7 +108,7 @@
 
 <% if @job.aasm_state == 'waiting_for_approval' %>
 <div class="">
-    <button><%= link_to "Download Budget", cost_path(@job.cost) %></button>
+    <button><%= link_to "Download Budget", cost_path(@job.cost), class: "link-button" %></button>
 </div>
 <% end %>
 
