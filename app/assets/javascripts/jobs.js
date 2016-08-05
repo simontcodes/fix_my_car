@@ -4,7 +4,7 @@
 $(function() {
   $('#client_client_id').on('change',function() {
     console.log($(this).val());
-    $('.carform').css("display","block")
+    $('#carform').css("display","block")
     $.ajax({
       url: '/clients/' + $(this).val(),
       method: 'GET',
