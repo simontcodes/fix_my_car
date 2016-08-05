@@ -1,20 +1,47 @@
-<p> <strong> <%= @client.name %> </strong> </p>
-<p>Email: <%= @client.email %> </p>
-<p>Phone: <%= @client.phone %> </p>
-<p>SIN: <%= @client.cedula %> </p>
+<h2><%= @client.name %></h2>
 
+<table>
+  <tbody>
+
+    <tr>
+      <td>Phone:</td>
+      <td><%= @client.phone %> </td>
+    </tr>
+
+    <tr>
+      <td>Email:</td>
+      <td><%= @client.email %> </td>
+    </tr>
+
+    <tr>
+      <td>SIN:</td>
+      <td><%= @client.cedula %> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="job-show-title"> Car</h2>
 
 <div class="">
+  <table>
+    <tr>
+      <th>Model</th>
+      <th>Make</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Plate</th>
+    </tr>
    <% @client.cars.each do |car| %>
-  <p>  <strong> <%= 'Car' %> </strong> </p>
-  <p>Make:  <%= car.make %>  </p>
-  <p>Model:  <%= car.model %>  </p>
-  <p>Year:  <%= car.year %>  </p>
-  <p>Color:  <%= car.color %>  </p>
-  <p>Plate:  <%= car.plate %>  </p>
-    <% end %>
+   <tr>
+    <td><%= car.model %>  </td>
+    <td><%= car.make %>  </td>
+    <td> <%= car.year %>  </td>
+    <td><%= car.color %>  </td>
+    <td><%= car.plate %>  </td>
+    </tr>
+      <% end %>
+  </table>
 </div>
-
-<p> <%= link_to 'Back to all clients', clients_path %> </p>
-<p> <%= link_to 'Add new Car to this Client', new_client_car_path(@client.id) %> </p>
-<p> <%= link_to 'Back to main', root_path %> </p>
+<button> <%= link_to 'Add a new car for this client', new_client_car_path(@client.id), class:"link-button" %> </button>
+<button class="menu-button"> <%= link_to 'Back to all clients', clients_path, class:"link-button" %> </button>
+<button> <%= link_to 'Back to main', root_path ,class:"link-button" %> </button>
