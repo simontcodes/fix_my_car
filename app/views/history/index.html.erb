@@ -11,17 +11,14 @@
       <th>
         Date Completed
       </th>
-      <th>
-        Link
-      </th>
     </tr>
 
 <% @completed_jobs.each do |job| %>
 <tr>
-  <td><%= job.car.client.name %></td>
+  <td><%= link_to job.car.client.name, job_path(id: job.token) %></td>
+
   <td><%= job.car.model %></td>
   <td><%= job.car.created_at %></td>
-<td><%= link_to "View", job_path(id: job.token) %></td>
 </tr>
 <% end %>
 
