@@ -74,16 +74,21 @@
       <h2 class="job-show-title"> Update Job </h2>
 
         <%= form_for @status do |f| %>
-          <p> <%= f.label :message %> <%= f.text_field :message , class: "submit-button" %> </p>
+           <%= f.label :message %> <%= f.text_area :message, size: "100x5", class: "submit-button" %>
           <%= f.hidden_field(:job_id,value: @job.id) %>
             <%= f.submit %>
             <% end %>
+      <%= form_for @status do |f| %>
+        <%= f.label :message %> <%= f.text_area :message, size: "100x5", class: "submit-button" %>
+        <%= f.hidden_field(:job_id,value: @job.id) %>
+        <%= f.submit %>
+
       <% end %>
     <% end %>
 
   <% if @job.aasm_state == 'budgeting' %>
       <%= form_for @cost, :html => {:multipart => true} do |f| %>
-        <p> <%= f.label :Budget %> <%= f.file_field :budget , class: "submit-button"%> </p>
+        <%= f.label :Budget %> <%= f.text_area :budget , size: "100x5", class: "submit-button"%>
 
         <%= f.hidden_field(:job_id, value: @job.id)%>
         <%= f.submit %>
