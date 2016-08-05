@@ -68,7 +68,7 @@
 
 <% if current_user %>
 
-<p> <h2> Update Job </h2> </p>
+<h2 class="job-show-title"> Update Job </h2>
 
     <% if @job.aasm_state != 'budgeting' %>
       <%= form_for @status do |f| %>
@@ -112,7 +112,7 @@
 
 <table>
   <tbody>
-    <h2>Log History </h2>
+    <h2 class="job-show-title">Log History </h2>
     <tr>
       <th>
         State:

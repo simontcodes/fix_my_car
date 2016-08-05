@@ -8,6 +8,7 @@
   @include outer-container;
   height: 30px;
   position: relative;
+  margin-left: 0;
   // background-color: yellow;
 }
 
@@ -103,6 +104,10 @@
 
 #carform {
   display: none;
+}
+
+.job-show-title {
+  margin-top: 3%;
 }
 
 .submit-button {
