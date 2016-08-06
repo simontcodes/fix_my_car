@@ -10,6 +10,7 @@
   position: relative;
   margin-left: 0;
   max-width: 100%;
+  margin-top: 100px;
   // background-color: yellow;
 }
 
@@ -123,11 +124,14 @@
 }
 
 .form-container {
+  padding-top: 100px;
   border: 0.5px solid black;
-  position: relative;
+  position: fixed;
   padding: 40px;
+  top: 200px;
+  left: 700px;
   display: block;
-  margin: auto;
+
   max-width: 40%;
   background-color: #e6e6e6;
 }
@@ -186,5 +190,6 @@ select {
 }
 
 .link-button {
+  padding-bottom: 30px;
   color: #fff;
 }

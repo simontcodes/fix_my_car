@@ -5,6 +5,7 @@
 
 .login_container {
   @include span-columns(12);
+  padding-top: 100px;
 }
 
 .landing_picture {
