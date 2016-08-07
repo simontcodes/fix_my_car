@@ -16,8 +16,8 @@
 }
 
 .title {
-  @include span-columns(5);
-  text-align: center;
+  width: 100%;
+  // text-align: center;
   vertical-align: middle;
 }
 

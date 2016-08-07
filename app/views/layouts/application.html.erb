@@ -11,34 +11,36 @@
 
   <body>
 
-<nav>
-<div class="header-outer-container">
-  <div class="header-container">
-    <div class="title-container">
-      <%= image_tag ("car.jpg"), class: "header-icon" %></span>
-      <%= link_to "FixMyCar", dashboards_path, id: "header-title" %>
+  <nav>
+    <div class="header-outer-container">
+      <div class="header-container">
+        <div class="title-container">
+          <%= image_tag ("car.jpg"), class: "header-icon" %></span>
+          <%= link_to "FixMyCar", dashboards_path, id: "header-title" %>
+        </div>
+        <div class="list-container">
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+            <li><%= link_to "Logout", :logout, method: :post %></li>
+            <li> <strong> Position:</strong> <%= current_user.position  %> </li>
+            <li><strong> Logged in as:</strong> <%= current_user.name  %> </li>
+          <% else %>
+            <li><%= link_to "Register", new_user_path %> </li>
+            <li><%= link_to "Login", :login %></li>
+          <% end %>
+        </ul>
+        </div>
+      </div>
     </div>
-    <div class="list-container">
-    <ul>
-      <% if current_user %>
-        <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
-        <li><%= link_to "Logout", :logout, method: :post %></li>
-        <li> <strong> Position:</strong> <%= current_user.position  %> </li>
-        <li><strong> Logged in as:</strong> <%= current_user.name  %> </li>
-      <% else %>
-        <li><%= link_to "Register", new_user_path %> </li>
-        <li><%= link_to "Login", :login %></li>
-      <% end %>
-    </ul>
-    </div>
-  </div>
-</div>
-</nav>
-  <footer class="footer">
-      <strong>All rights reserved </strong>
-  </footer>
+  </nav>
+
     <%= yield %>
 
-    </body>
+  <!-- <footer class="footer">
+    <strong>All rights reserved </strong>
+  </footer> -->
+
+</body>
 
 </html>
