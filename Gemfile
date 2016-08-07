@@ -36,6 +36,9 @@ gem 'mail', '~> 2.6', '>= 2.6.4'
 
 gem 'rspec', '~> 3.5'
 
+#pagination for client list
+gem 'will_paginate'
+
 
 #displays the emails in another tab rather than in console
 gem "letter_opener", :group => :development

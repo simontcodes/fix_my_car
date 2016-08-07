@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.all.order("name")
+    @clients = Client.all.order("name").page(params[:page]).per_page(4)
   end
 
   def new

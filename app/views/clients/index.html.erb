@@ -15,6 +15,7 @@
       </th>
      </tr>
 
+
   <% @clients.each do |client| %>
   <tr>
     <td><%= link_to "#{client.name}", client_path(client) %> </td>
@@ -25,6 +26,10 @@
 
    </tbody>
  </table>
+ <div class="digg_pagination">
+    <%= will_paginate @clients %>
+ </div>
+
 <button><%= link_to 'Add a New Client', new_client_path , class: "link-button"%> </button>
 
  <button> <%= link_to 'Back to main', root_path, class: "link-button" %> </button>
