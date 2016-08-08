@@ -1,5 +1,17 @@
 <h2>Adding Car to Client  </h2>
 
+<% if @car.errors.any? %>
+<div class="error_messages">
+  <h2>Form is invalid</h2>
+    <h4>There are <%= pluralize(@car.errors.count, "errors") %> that prohibited you from creating a car.</h4>
+  <ul>
+    <% @car.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
+
 
 <%= form_for [@client, @car] do |f| %>
    <div class="field">

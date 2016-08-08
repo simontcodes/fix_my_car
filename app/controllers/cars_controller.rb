@@ -6,6 +6,7 @@ class CarsController < ApplicationController
   end
 
   def create
+    @client = Client.find(params[:client_id])
     @car = Car.new(car_params)
     @car.client_id = params[:client_id]
     if @car.save

@@ -68,7 +68,6 @@
 
 <% if current_user %>
 
-
     <% if @job.aasm_state != 'budgeting' && @job.aasm_state != 'completed' && @job.aasm_state != 'waiting_for_approval'%>
 
       <h2 class="job-show-title"> Update Job </h2>
