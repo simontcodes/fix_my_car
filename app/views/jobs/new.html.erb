@@ -1,4 +1,14 @@
-<body>
+<% if @job.errors.any? %>
+<div class="error_messages">
+  <h2>Form is invalid</h2>
+    <h4>There are <%= pluralize(@job.errors.count, "errors") %> that prohibited you from creating a job.</h4>
+  <ul>
+    <% @job.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
 
 <div class="form-container">
   <h1 class="jobtitle">New Repair Request</h1>
@@ -26,7 +36,6 @@
 
 
 
-</body>
 
 
 

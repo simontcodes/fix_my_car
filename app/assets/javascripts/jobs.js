@@ -3,7 +3,6 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(function() {
   $('#client_client_id').on('change',function() {
-    console.log($(this).val());
     $('#carform').css("display","block")
     $.ajax({
       url: '/clients/' + $(this).val(),

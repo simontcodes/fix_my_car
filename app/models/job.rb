@@ -11,6 +11,9 @@ class Job < ApplicationRecord
   belongs_to :mechanic
   belongs_to :car
 
+  validates :car_id, :mechanic_id, presence: true, on: :create
+
+
   aasm do
     state :received, initial: true
     state :diagnosing
