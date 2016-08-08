@@ -62,8 +62,12 @@ end
 
  # account_sid = "AC5bb068e864539b01f20f046a8635c262"
     #test auth_token = "189c79a9541f497d17192574166f5c53"
-    account_sid = Rails.application.secrets.twilio_key
-    auth_token = Rails.application.secrets.twilio_auth
+    # account_sid = Rails.application.secrets.twilio_key
+    # auth_token = Rails.application.secrets.twilio_auth
+
+    account_sid = ENV['TWILIO_KEY']
+    auth_token = ENV['TWILIO_AUTH']
+
       # binding.pry
        twilio_number = "+16474964559"
        client = Twilio::REST::Client.new account_sid, auth_token
