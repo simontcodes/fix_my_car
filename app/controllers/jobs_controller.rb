@@ -35,6 +35,12 @@ class JobsController < ApplicationController
     end
   end
 
+  def destroy
+        @job = Job.find_by(id: params[:id])
+        @job.destroy
+        redirect_to jobs_path
+      end
+
 # def update
 #   @status = Status.new(status_params)
 #
