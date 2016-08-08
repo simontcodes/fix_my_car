@@ -43,5 +43,6 @@
   </table>
 </div>
 <button> <%= link_to 'Add a new car for this client', new_client_car_path(@client.id), class:"link-button" %> </button>
+<button> <%= link_to "Edit", edit_client_path(@client.id), class:"link-button" %> </button>
 <button class="menu-button"> <%= link_to 'Back to all clients', clients_path, class:"link-button" %> </button>
 <button> <%= link_to 'Back to main', root_path ,class:"link-button" %> </button>

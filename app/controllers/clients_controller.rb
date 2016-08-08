@@ -28,6 +28,25 @@ class ClientsController < ApplicationController
     end
   end
 
+  def edit
+    @client = Client.find_by(id: params[:id])
+  end
+
+  def destroy
+        @client = Client.find_by(id: params[:id])
+        @client.destroy
+        redirect_to clients_path
+      end
+
+  def update
+    @client = Client.find(params[:id])
+      if @client.update_attributes(client_params)
+        redirect_to client_path(@client)
+      else
+        render :edit
+      end
+  end
+
   private
 
   def client_params
