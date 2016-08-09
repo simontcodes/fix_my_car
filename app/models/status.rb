@@ -12,6 +12,8 @@ class Status < ApplicationRecord
     elsif self.job.budgeting?
       self.job.approve!
       ClientMailer.aproval(self.job.car.client, self.job).deliver_later
+      send_message("+14162007371","Thank you for choosing FixMyCar, a cost estimate has been uploaded go to the link to download it.
+      #{job_url(id: @job.token)}")
     elsif self.job.waiting_for_approval?
       self.job.repair!
     elsif self.job.repairing?
