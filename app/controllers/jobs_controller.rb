@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order("created_at")
   end
 
   def show
