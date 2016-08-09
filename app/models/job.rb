@@ -33,7 +33,6 @@ class Job < ApplicationRecord
 
     event :approve do
       transitions from: :budgeting, to: :waiting_for_approval
-      ClientMailer.aproval(client).deliver_later
     end
 
     event :repair do

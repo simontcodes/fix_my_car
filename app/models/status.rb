@@ -11,6 +11,7 @@ class Status < ApplicationRecord
       self.job.budget!
     elsif self.job.budgeting?
       self.job.approve!
+      ClientMailer.aproval(self.job.car.client, self.job).deliver_later
     elsif self.job.waiting_for_approval?
       self.job.repair!
     elsif self.job.repairing?
