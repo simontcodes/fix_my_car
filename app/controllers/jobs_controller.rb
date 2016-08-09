@@ -28,7 +28,6 @@ class JobsController < ApplicationController
       redirect_to dashboards_path, notice: "Job Created Successfully!"
 
       # to insert the phone number @job.car.client.phone
-
     else
       render :new
     end
