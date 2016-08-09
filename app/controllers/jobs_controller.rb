@@ -23,8 +23,8 @@ class JobsController < ApplicationController
 
     if @job.save
 
-      ClientMailer.received(@job.car.client,@job).deliver_later
-       send_message("+14162007371","Thank you for choosing FixMyCar, follow this link to check the progress of your car. #{ link_to "link", job_url(id: @job.token)}")
+      ClientMailer.received(@job.car.client,@job).deliver_late
+       send_message("+14162007371","Thank you for choosing FixMyCar, follow this link to check the progress of your car. #{ job_url(id: @job.token)}")
       redirect_to dashboards_path, notice: "Job Created Successfully!"
 
       # to insert the phone number @job.car.client.phone
