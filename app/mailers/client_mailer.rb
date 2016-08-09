@@ -6,7 +6,7 @@ class ClientMailer < ApplicationMailer
     mail(to: @client.email, subject: "Car received")
   end
 
-  def aproval(client,job)
+  def aproval(job, client)
     @job = job
     @client = client
     mail(to: @client.email, subject: "budget waiting for approval")
