@@ -36,7 +36,7 @@
            <td><%= job.car.make %> </td>
            <td><%= job.car.plate %> </td>
            <td><%= job.created_at.strftime("%m-%d-%Y") %> </td>
-           <td>  <%= link_to("Delete!", {:controller=>'jobs', :action=>'destroy', :id=>job.id}, {method: :delete}) %> </td>
+           <td>  <%= link_to("Delete", {:controller=>'jobs', :action=>'destroy', :id=>job.id}, {method: :delete}) %> </td>
          </tr>
        <% end %>
      <% end %>

@@ -106,7 +106,7 @@
 
 
 <% if @job.aasm_state == 'waiting_for_approval' %>
-<div class="">
+<div class="download-budget">
     <button><%= link_to "Download Budget", cost_path(@job.cost), class: "link-button" %></button>
 </div>
 <% end %>

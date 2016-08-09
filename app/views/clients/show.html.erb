@@ -33,11 +33,11 @@
     </tr>
    <% @client.cars.each do |car| %>
    <tr>
-    <td><%= car.model %>  </td>
-    <td><%= car.make %>  </td>
+    <td><%= car.model.capitalize %>  </td>
+    <td><%= car.make.capitalize %>  </td>
     <td> <%= car.year %>  </td>
-    <td><%= car.color %>  </td>
-    <td><%= car.plate %>  </td>
+    <td><%= car.color.capitalize %>  </td>
+    <td><%= car.plate.upcase %>  </td>
     </tr>
       <% end %>
   </table>
